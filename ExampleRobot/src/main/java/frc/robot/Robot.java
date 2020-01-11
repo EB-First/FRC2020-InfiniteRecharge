@@ -10,11 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.subsystems.DrivebaseSubsystem;
-import frc.robot.subsystems.ClimberSubsystem;
-import frc.robot.subsystems.IndexerSubsystem;
-import frc.robot.subsystems.ShooterSubsystem;
-import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ExampleSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,11 +26,7 @@ public class Robot extends TimedRobot {
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
   // Subsystem initialization and declarations
-  public static ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
-  public static DrivebaseSubsystem m_DrivebaseSubsystem = new DrivebaseSubsystem();
-  public static ClimberSubsystem m_ClimberSubsystem = new ClimberSubsystem();
-  public static IndexerSubsystem m_IndexerSubsystem = new IndexerSubsystem();
-  public static IntakeSubsystem m_IntakeSubsystem = new IntakeSubsystem();
+  public static ExampleSubsystem m_ExampleSubsystem = new ExampleSubsystem();
 
   /**
    * This function is run when the robot is first started up and should be

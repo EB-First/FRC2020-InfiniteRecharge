@@ -9,12 +9,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.variables.RobotMap;
-import frc.robot.variables.RobotMap.activatorSolenoid;
 
 /**
  * An example subsystem. You can replace me with your own Subsystem.
@@ -24,7 +20,7 @@ public class IntakeSubsystem extends Subsystem {
     // here. Call these from Commands.
     
     // Two slaved motors to manage belt
-    private DoubleSolenoid activatorSolenoid;// = new DoubleSolenoid(RobotMap.activatorSolenoid.forwardChannel, RobotMap.activatorSolenoid.reverseChannel);
+    private DoubleSolenoid activatorSolenoid;
     private Spark intakeMotor;
 
     public IntakeSubsystem(){
