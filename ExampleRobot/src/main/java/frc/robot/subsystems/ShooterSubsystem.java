@@ -3,11 +3,11 @@ public class ShooterSubsystem extends Subsystem {
     CANSparkMax topMotor = new CANSparkMax(2, CANSparkMaxLowLevel.MotorType.kBrushless);
     CANSparkMax bottomMotor = new CANSparkMax (3, CANSparkMaxLowLevel.MotorType.kBrushless);
 
-    public void ShooterUp() {
+    public void shooterUp() {
         neo.set(1);
     }
 
-    public void ShooterDown() {
+    public void shooterDown() {
         neo.set(-1);
     }
 
