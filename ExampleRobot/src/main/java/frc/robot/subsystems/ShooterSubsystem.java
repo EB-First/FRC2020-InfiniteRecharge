@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ShooterSubsystem extends Subsystem {
    public static ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
 
-	 CANSparkMax neo = new CANSparkMax();
+	CANSparkMax neo = new CANSparkMax(1, CANSparkMaxLowLevel.MotorLevel.kBrushless);
     CANSparkMax topMotor = new CANSparkMax(2, CANSparkMaxLowLevel.MotorType.kBrushless);
     CANSparkMax bottomMotor = new CANSparkMax (3, CANSparkMaxLowLevel.MotorType.kBrushless);
 
@@ -24,8 +24,16 @@ public class ShooterSubsystem extends Subsystem {
         bottomMotor.set(1);
     }
 
-    public void setSpeed(CANSparkMax type, double speed) {
-       type.set(speed);
+    public void setNeoSpeed(double speed) {
+       neo.set(speed);
+    }
+
+    public void setTopMotorSpeed(double speed) {
+        topMotor.set(speed);
+    }
+
+    public void setBottomMotorSpeed(double speed) {
+        bottomMotor.set(speed);
     }
 
 
