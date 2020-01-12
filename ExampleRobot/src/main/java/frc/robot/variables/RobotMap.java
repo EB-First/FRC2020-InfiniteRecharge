@@ -22,4 +22,14 @@ public class RobotMap {
         public static int forwardChannel = 0;
         public static int reverseChannel = 0;
     }
+
+    public static int leftJoystick = 0;
+    public static int rightJoystick = 1;
+ 
+    public static int leftFrontMotor = 0;
+    public static int leftMidMotor = 1;
+    public static int leftBackMotor = 2;
+    public static int rightFrontMotor = 3;
+    public static int rightMidMotor = 4;
+    public static int rightBackMotor = 5;
 }

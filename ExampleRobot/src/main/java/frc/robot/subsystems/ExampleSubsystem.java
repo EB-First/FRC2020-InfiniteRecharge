@@ -8,7 +8,6 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.variables.RobotMap;
 
 /**
  * An example subsystem. You can replace me with your own Subsystem.
