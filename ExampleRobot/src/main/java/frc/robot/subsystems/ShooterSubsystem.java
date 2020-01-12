@@ -1,5 +1,12 @@
+package frc.robot.subsystems;
+
+
+import edu.wpi.first.wpilibj.command.Subsystem;
+
 public class ShooterSubsystem extends Subsystem {
-    CANSparkMax neo = new CANSparkMax();
+   public static ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
+
+	 CANSparkMax neo = new CANSparkMax();
     CANSparkMax topMotor = new CANSparkMax(2, CANSparkMaxLowLevel.MotorType.kBrushless);
     CANSparkMax bottomMotor = new CANSparkMax (3, CANSparkMaxLowLevel.MotorType.kBrushless);
 
@@ -17,8 +24,12 @@ public class ShooterSubsystem extends Subsystem {
         bottomMotor.set(1);
     }
 
-    @Override
+    public void setSpeed(CANSparkMax type, double speed) {
+       type.set(speed);
+    }
 
+
+    @Override
     public void initDefaultCommand(){
         // set the default command
         // setDefaultCommand (new mySpecialCommand());
