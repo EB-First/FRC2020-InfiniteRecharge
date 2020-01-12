@@ -28,7 +28,7 @@ public void feed() {
  
 public void ballUp() {
   index_leftMotor.set(-0.5);
-  index_rightMotor.set(-0.5);
+  index_rightMotor.set(0.5);
 }
  
 public void ballDown() {
