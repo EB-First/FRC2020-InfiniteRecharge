@@ -37,7 +37,8 @@ protected void end() {
  
 @Override
 protected void interrupted() {
-    m_ShooterSubsystem.set(0);
+    m_ShooterSubsystem.setNeoSpeed(0);
+
     } 
     
     
