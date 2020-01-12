@@ -7,7 +7,7 @@ import frc.robot.Robot;
 
 public class ShooterUpCommand extends Command {
     private ShooterSubsystem m_ShooterSubsystem = Robot.m_ShooterSubsystem;
-    public ShooterUpCommand {
+    public ShooterUpCommand() {
         requires (Robot.m_ShooterSubsystem);
     }
  
