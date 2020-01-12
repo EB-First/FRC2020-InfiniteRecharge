@@ -27,7 +27,10 @@ public class ShooterUpCommand extends Command {
     protected void end() {}
  
     @Override 
-    protected void interrupted() {topMotor.setSpeed(0);}
+    protected void interrupted() {    
+        m_ShooterSubsystem.setNeoSpeed(0);
+
+    }
  
  
 }
