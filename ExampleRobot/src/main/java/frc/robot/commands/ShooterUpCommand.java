@@ -1,3 +1,10 @@
+package frc.robot.commands;
+
+import javax.annotation.OverridingMethodsMustInvokeSuper;
+
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
+
 public class ShooterUpCommand extends Command {
     private ShooterSubsystem m_ShooterSubsystem = Robot.m_ShooterSubsystem;
     public ShooterUpCommand {
