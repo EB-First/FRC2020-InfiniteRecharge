@@ -1,3 +1,10 @@
+package frc.robot.commands;
+
+import javax.annotation.OverridingMethodsMustInvokeSuper;
+
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
+
 public class ShooterDownCommand extends Command {
     private ShooterSubsystem m_Shootersystem = Robot.m_ShooterSubsystem;
     public ShooterDownCommand {
@@ -15,7 +22,7 @@ protected void initialize () {
 protected void execute() {
     m_ShooterSubsystem.shooterDown();
 }
- 
+
 @Override
 protected boolean isFinished() {
     return false;
