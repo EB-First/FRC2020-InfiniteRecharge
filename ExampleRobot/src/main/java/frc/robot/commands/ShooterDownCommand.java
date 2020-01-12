@@ -4,13 +4,15 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.ShooterSubsystem;;
+
 
 public class ShooterDownCommand extends Command {
-    private ShooterSubsystem m_Shootersystem = Robot.m_ShooterSubsystem;
+    private ShooterSubsystem m_ShooterSubsystem = Robot.m_ShooterSubsystem;
     public ShooterDownCommand() {
-    }
+    
     requires (Robot.m_ShooterSubsystem);
- 
+    }
  
  
 @Override
