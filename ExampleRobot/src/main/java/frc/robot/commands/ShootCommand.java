@@ -31,6 +31,10 @@ public class ShootCommand extends Command {
     }
     @Override
     protected void interrupted() {
-        m_ShooterSubsystem.set(0);
+        m_ShooterSubsystem.setTopMotorSpeed(0);    
+        m_ShooterSubsystem.setBottomMotorSpeed(0);
+
+
+        
     }
 }
