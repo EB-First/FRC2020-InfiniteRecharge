@@ -2,20 +2,34 @@ package frc.robot.subsystems;
 
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.OI;
+import frc.robot.variables.Constants;
 
 public class ShooterSubsystem extends Subsystem {
    public static ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
+
+   private OI m_oi;
 
 	CANSparkMax neo = new CANSparkMax(1, CANSparkMaxLowLevel.MotorLevel.kBrushless);
     CANSparkMax topMotor = new CANSparkMax(2, CANSparkMaxLowLevel.MotorType.kBrushless);
     CANSparkMax bottomMotor = new CANSparkMax (3, CANSparkMaxLowLevel.MotorType.kBrushless);
 
     public void shooterUp() {
-        neo.set(1);
+  
+   if(m_oi.readRightForwardAxis() > frc.robot.variables.Constants.deadzone)
+    { 
+     neo.set(1);
     }
+}
+
+    
 
     public void shooterDown() {
+        
+   if(m_oi.readRightForwardAxis() < -frc.robot.variables.Constants.deadzone)
+   { 
         neo.set(-1);
+   }
     }
 
     public void shoot() {
