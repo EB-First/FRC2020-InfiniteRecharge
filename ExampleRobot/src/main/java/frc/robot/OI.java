@@ -28,11 +28,7 @@ public class OI {
     public double readRightForwardAxis() { return rightJoystick.getY();}
 
     public OI() {
-    shootButton.whileHeld(ShootCommand());
+    shootButton.whileHeld(new ShootCommand());
 }
-
-	private Command ShootCommand() {
-		return null;
-	}
    
 }
