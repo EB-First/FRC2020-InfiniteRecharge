@@ -12,8 +12,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.variables.RobotMap;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.commands.*;
-import frc.robot.variables.ControlMap;;;
+import frc.robot.variables.ControlMap;
 
 /**
  * Add your docs here.
@@ -27,9 +28,11 @@ public class OI {
     public double readRightForwardAxis() { return rightJoystick.getY();}
 
     public OI() {
-    
-    shootButton.whileHeld(new ShootCommand());
-   
+    shootButton.whileHeld(ShootCommand());
 }
+
+	private Command ShootCommand() {
+		return null;
+	}
    
 }
