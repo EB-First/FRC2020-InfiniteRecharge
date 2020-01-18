@@ -2,35 +2,31 @@ package frc.robot.commands;
 
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
-import edu.wpi.first.wpilibj.command.Command;
+// import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 import frc.robot.subsystems.ShooterSubsystem;
 
 
 
-public class ShooterUpCommand extends Command {
-    private ShooterSubsystem m_ShooterSubsystem = Robot.m_ShooterSubsystem;
+public class ShooterUpCommand extends CommandBase {
     public ShooterUpCommand() {
-        requires (Robot.m_ShooterSubsystem);
+        addRequirements(Robot.m_ShooterSubsystem);
     }
  
     @Override
-    protected void initialize() {}
+    public void initialize() {}
  
     @Override
-    protected void execute() {m_ShooterSubsystem.shooterUp();}
+    public void execute() {Robot.m_ShooterSubsystem.shooterUp();}
  
     @Override
-    protected boolean isFinished() {return false;}
+    public boolean isFinished() {return false;}
  
     @Override 
-    protected void end() {}
- 
-    @Override 
-    protected void interrupted() {    
-        m_ShooterSubsystem.setNeoSpeed(0);
-
+    public void end(boolean interrupted) {
+        if(interrupted) {
+            Robot.m_ShooterSubsystem.setNeoSpeed(0);
+        }
     }
- 
- 
 }
