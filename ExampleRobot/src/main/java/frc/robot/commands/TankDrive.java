@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Copyright (c) 2019 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
@@ -7,44 +7,55 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.OI;
 import frc.robot.Robot;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.variables.Constants;
 
-public class TankDrive extends Command {
-  private DriveSubsystem m_DriveSubsystem = Robot.m_DriveSubsystem;
+public class TankDrive extends CommandBase {
+  private OI m_oi;
+  private DriveSubsystem m_DriveSubsystem;
 
+  /**
+   * Creates a new TankDrive.
+   */
   public TankDrive() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
-    requires(m_DriveSubsystem);
+    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(Robot.m_DriveSubsystem);
+    m_oi = Robot.m_oi;
+    m_DriveSubsystem = Robot.m_DriveSubsystem;
   }
 
-  // Called just before this Command runs the first time
+  // Called when the command is initially scheduled.
   @Override
-  protected void initialize() {
+  public void initialize() {
   }
 
-  // Called repeatedly when this Command is scheduled to run
+  // Called every time the scheduler runs while the command is scheduled.
   @Override
-  protected void execute() {
-    m_DriveSubsystem.drive();
+  public void execute() {
+    double leftSpeed, rightSpeed;
+    while(m_oi.readLeftForwardAxis() > frc.robot.variables.Constants.deadzone 
+                  || m_oi.readRightForwardAxis() > frc.robot.variables.Constants.deadzone
+                  || m_oi.readLeftForwardAxis() < -frc.robot.variables.Constants.deadzone 
+                  || m_oi.readRightForwardAxis() < -frc.robot.variables.Constants.deadzone)
+    {
+      leftSpeed = m_oi.readLeftForwardAxis()*Constants.driveSpeed;
+      rightSpeed = m_oi.readRightForwardAxis()*Constants.driveSpeed;
+      m_DriveSubsystem.drive(leftSpeed, rightSpeed);
+    }
   }
 
-  // Make this return true when this Command no longer needs to run execute()
+  // Called once the command ends or is interrupted.
   @Override
-  protected boolean isFinished() {
+  public void end(boolean interrupted) {
+    m_DriveSubsystem.drive(0, 0);
+  }
+
+  // Returns true when the command should end.
+  @Override
+  public boolean isFinished() {
     return false;
-  }
-
-  // Called once after isFinished returns true
-  @Override
-  protected void end() {
-  }
-
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
-  @Override
-  protected void interrupted() {
   }
 }

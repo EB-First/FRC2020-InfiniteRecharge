@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.ExampleSubsystem;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -29,8 +28,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
 
   // Subsystem initialization and declarations
-  public static ExampleSubsystem m_ExampleSubsystem = new ExampleSubsystem();
-  public static DriveSubsystem m_DriveSubsystem = new DriveSubsystem(m_oi);
+  public static DriveSubsystem m_DriveSubsystem = new DriveSubsystem();
   public static DifferentialDrive tankDrive = m_DriveSubsystem.getTankDrive();
 
 
