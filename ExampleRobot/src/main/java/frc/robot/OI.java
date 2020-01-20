@@ -10,9 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.variables.RobotMap;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj2.command.button.*;
 import frc.robot.commands.*;
 import frc.robot.variables.ControlMap;
 
