@@ -16,4 +16,6 @@ public class Constants {
 
     final static public double intakeSpeed = 0.5;
 
+    final static public double deadzone = 0.3;
+
 }

@@ -16,4 +16,6 @@ public class ControlMap {
   public static int leftStick = 0;
   public static int rightStick = 0;
 
+  public static int shootButton = 7;
+
 }
