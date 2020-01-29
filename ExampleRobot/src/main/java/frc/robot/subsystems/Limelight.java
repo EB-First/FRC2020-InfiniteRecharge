@@ -6,10 +6,10 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.subsystems;
-
-import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.subsystems.*;
 import frc.robot.variables.RobotMap;
 import edu.wpi.first.networktables.*;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Limelight extends Subsystem {
   private String networktablename;
