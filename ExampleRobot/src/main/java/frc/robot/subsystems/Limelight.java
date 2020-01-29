@@ -53,7 +53,12 @@ public class Limelight extends Subsystem {
     NetworkTableInstance.getDefault().getTable(networktablename).getEntry("snapshot").setNumber(0);
   }
   //Whether the limelight has any valid targets 
-  public boolean hasTarget() {
+  public boolean hasTarget() {public double getDistanceLimelight(){
+    double h_goal = 98.5f;//Height of the goal is 98.5 inches
+    double y_offset = getVerticalOffset();//Ty value  
+    double shooter_Angle = 1;//VALUE IS NOT REAL BE AWARE OF THAT!!!!!!!
+    double distance_To_Limelight = h_goal/Math.tan(shooter_Angle + y_offset);//Distance Formula
+  }
     double value = NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tv").getDouble(0);
     if (value == 0) {
     return false;
@@ -97,6 +102,7 @@ public double getVerticalSidelength() {
 public double getHorizontalSideLength() {
   return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("thor").getDouble(0);
 }
+
 
     @Override
     protected void initDefaultCommand() {
