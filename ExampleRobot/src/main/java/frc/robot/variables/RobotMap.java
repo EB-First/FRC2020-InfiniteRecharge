@@ -18,6 +18,10 @@ public class RobotMap {
     public static int operatorGamepad = 0;
 
     public static int intakeMotor = 0;
+
+    public static final int LEFT_INDEXER_MOTOR=0;
+    public static final int RIGHT_INDEXER_MOTOR=1;
+
     public static class activatorSolenoid {
         public static int forwardChannel = 0;
         public static int reverseChannel = 0;
