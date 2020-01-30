@@ -97,7 +97,13 @@ public double getVerticalSidelength() {
 public double getHorizontalSideLength() {
   return NetworkTableInstance.getDefault().getTable(networktablename).getEntry("thor").getDouble(0);
 }
-
+public double distanceLimelight(){
+  double h_goal = 98.5; //Height of the goal in inches
+  double y_offset = getVerticalOffset();//Ty value
+  double shooter_Angle = 1; //This a psuedovalue that does not matter
+  double distanceLimelight = h_goal/Math.tan(shooter_Angle + y_offset);
+  return distanceLimelight;
+}
     @Override
     protected void initDefaultCommand() {
         // TODO Auto-generated method stub
