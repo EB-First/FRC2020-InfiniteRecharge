@@ -1,4 +1,4 @@
-/*----------------------------------------------------------------------------*/
+﻿/*----------------------------------------------------------------------------*/
 /* Copyright (c) 2019 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
@@ -53,12 +53,7 @@ public class Limelight extends Subsystem {
     NetworkTableInstance.getDefault().getTable(networktablename).getEntry("snapshot").setNumber(0);
   }
   //Whether the limelight has any valid targets 
-  public boolean hasTarget() {public double getDistanceLimelight(){
-    double h_goal = 98.5f;//Height of the goal is 98.5 inches
-    double y_offset = getVerticalOffset();//Ty value  
-    double shooter_Angle = 1;//VALUE IS NOT REAL BE AWARE OF THAT!!!!!!!
-    double distance_To_Limelight = h_goal/Math.tan(shooter_Angle + y_offset);//Distance Formula
-  }
+  public boolean hasTarget() {
     double value = NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tv").getDouble(0);
     if (value == 0) {
     return false;
