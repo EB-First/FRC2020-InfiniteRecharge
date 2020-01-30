@@ -49,12 +49,17 @@ public class Limelight extends Subsystem {
   public boolean hasTarget() {
     double value = NetworkTableInstance.getDefault().getTable(networktablename).getEntry("tv").getDouble(0);
     if (value == 0) {
-    return false;
-    } else if (value == 1) {
-      return true;
-    }else {
-      System.out.println("Error in getting target data");
-      return false;
+      boolean target = false;
+      return target;
+    } 
+    else if (value == 1) {
+      boolean target = true;
+      return target;
+    }
+    else {
+      boolean target = false;
+      System.out.println("The following issue is occuring. The limelight is not able to pick up a target");
+      return target;
     }
   }
   //Horizontal Offset From Crosshair To Target (LL1: -27 degrees to 27 degrees | LL2: -29.8 to 29.8 degrees)
@@ -96,6 +101,13 @@ public double getDistance(){
   double shooter_Angle = 1; //This a psuedovalue that does not matter
   double distanceLimelight = h_goal/Math.tan(shooter_Angle + y_offset);
   return distanceLimelight;
+}
+public double targetAquired(){
+  if(hasTarget()){
+    return getDistance(); //This data will be used in Smart Dashboard
+  }
+  //Will create code that when button held it will line up
+  return getDistance(); //This data will be used in Smart Dashboard
 }
     @Override
     protected void initDefaultCommand() {
