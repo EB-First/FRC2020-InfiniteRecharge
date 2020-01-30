@@ -43,14 +43,14 @@ public class TankDrive extends CommandBase {
     {
       leftSpeed = m_oi.readLeftForwardAxis()*Constants.driveSpeed;
       rightSpeed = m_oi.readRightForwardAxis()*Constants.driveSpeed;
-      m_DriveSubsystem.tankDrive.tankDrive(leftSpeed, rightSpeed);
+      m_DriveSubsystem.getTankDrive().tankDrive(leftSpeed, rightSpeed);
     }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_DriveSubsystem.drive(0, 0);
+    m_DriveSubsystem.getTankDrive().tankDrive(0, 0);
   }
 
   // Returns true when the command should end.
