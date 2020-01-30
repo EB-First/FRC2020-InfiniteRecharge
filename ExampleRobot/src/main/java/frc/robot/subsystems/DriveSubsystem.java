@@ -56,11 +56,6 @@ public class DriveSubsystem extends SubsystemBase {
   {
     return rightFMotor;
   }
-
-  public void drive(double leftSpeed, double rightSpeed)
-  {
-    tankDrive.tankDrive(leftSpeed, rightSpeed);
-  }
  
   public DifferentialDrive getTankDrive()
   {

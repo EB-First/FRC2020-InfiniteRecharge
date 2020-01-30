@@ -43,7 +43,7 @@ public class TankDrive extends CommandBase {
     {
       leftSpeed = m_oi.readLeftForwardAxis()*Constants.driveSpeed;
       rightSpeed = m_oi.readRightForwardAxis()*Constants.driveSpeed;
-      m_DriveSubsystem.drive(leftSpeed, rightSpeed);
+      m_DriveSubsystem.tankDrive.tankDrive(leftSpeed, rightSpeed);
     }
   }
 
