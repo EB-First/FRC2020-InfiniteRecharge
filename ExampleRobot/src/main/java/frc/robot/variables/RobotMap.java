@@ -19,8 +19,9 @@ public class RobotMap {
 
     public static int intakeMotor = 0;
 
-    public static final int LEFT_INDEXER_MOTOR=0;
-    public static final int RIGHT_INDEXER_MOTOR=1;
+    public static final int LEFT_INDEXER_MOTOR=1;
+    public static final int RIGHT_INDEXER_MOTOR=2;
+    public static final int INDEXER_FEEDER_MOTOR=3;
 
     public static class activatorSolenoid {
         public static int forwardChannel = 0;
