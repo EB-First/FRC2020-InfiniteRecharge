@@ -16,4 +16,6 @@ public class ControlMap {
   public static int leftStick = 0;
   public static int rightStick = 0;
 
+  public static int intakeButton = 8; //magic number - is R2 on the PS4 still being used?
+
 }
