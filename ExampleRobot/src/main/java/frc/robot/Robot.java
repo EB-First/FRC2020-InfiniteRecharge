@@ -8,9 +8,10 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.DriveSubsystem;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -24,8 +25,12 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
+  public static OI m_oi;
+
   // Subsystem initialization and declarations
-  public static ExampleSubsystem m_ExampleSubsystem = new ExampleSubsystem();
+  public static DriveSubsystem m_DriveSubsystem = new DriveSubsystem();
+  public static DifferentialDrive tankDrive = m_DriveSubsystem.getTankDrive();
+
 
   /**
    * This function is run when the robot is first started up and should be
